@@ -7,25 +7,29 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3E370586258EFDD2003144DB /* CharacterListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E370585258EFDD2003144DB /* CharacterListTableViewController.swift */; };
+		3E37058E258F12E1003144DB /* CharacterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E37058C258F12E1003144DB /* CharacterTableViewCell.swift */; };
+		3E37058F258F12E1003144DB /* CharacterTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3E37058D258F12E1003144DB /* CharacterTableViewCell.xib */; };
 		3E7C1967258C62A800A715BE /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 3E7C1966258C62A800A715BE /* README.md */; };
 		3EA398CE258C53B800ABE87C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA398CD258C53B800ABE87C /* AppDelegate.swift */; };
 		3EA398D0258C53B800ABE87C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA398CF258C53B800ABE87C /* SceneDelegate.swift */; };
-		3EA398D2258C53B800ABE87C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA398D1258C53B800ABE87C /* ViewController.swift */; };
-		3EA398D5258C53B800ABE87C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EA398D3258C53B800ABE87C /* Main.storyboard */; };
 		3EA398D7258C53BA00ABE87C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3EA398D6258C53BA00ABE87C /* Assets.xcassets */; };
 		3EA398DA258C53BA00ABE87C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EA398D8258C53BA00ABE87C /* LaunchScreen.storyboard */; };
+		3EE388022591952A003035AF /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE388012591952A003035AF /* Character.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3E370585258EFDD2003144DB /* CharacterListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListTableViewController.swift; sourceTree = "<group>"; };
+		3E37058C258F12E1003144DB /* CharacterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterTableViewCell.swift; sourceTree = "<group>"; };
+		3E37058D258F12E1003144DB /* CharacterTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CharacterTableViewCell.xib; sourceTree = "<group>"; };
 		3E7C1966258C62A800A715BE /* README.md */ = {isa = PBXFileReference; explicitFileType = net.daringfireball.markdown; fileEncoding = 4; path = README.md; sourceTree = "<group>"; };
 		3EA398CA258C53B800ABE87C /* RickAndMorty Characters iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "RickAndMorty Characters iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3EA398CD258C53B800ABE87C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3EA398CF258C53B800ABE87C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		3EA398D1258C53B800ABE87C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		3EA398D4258C53B800ABE87C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3EA398D6258C53BA00ABE87C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3EA398D9258C53BA00ABE87C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3EA398DB258C53BA00ABE87C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3EE388012591952A003035AF /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +47,7 @@
 			isa = PBXGroup;
 			children = (
 				3E035079258C653F005AB58B /* Launch */,
+				3E37057E258EFC3E003144DB /* CharacterList */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -71,6 +76,24 @@
 			path = AppDelegate;
 			sourceTree = "<group>";
 		};
+		3E37057E258EFC3E003144DB /* CharacterList */ = {
+			isa = PBXGroup;
+			children = (
+				3E370585258EFDD2003144DB /* CharacterListTableViewController.swift */,
+				3E370592258F1334003144DB /* Cell */,
+			);
+			path = CharacterList;
+			sourceTree = "<group>";
+		};
+		3E370592258F1334003144DB /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				3E37058C258F12E1003144DB /* CharacterTableViewCell.swift */,
+				3E37058D258F12E1003144DB /* CharacterTableViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		3EA398C1258C53B800ABE87C = {
 			isa = PBXGroup;
 			children = (
@@ -94,12 +117,27 @@
 				3E03507C258C6611005AB58B /* AppDelegate */,
 				3E035078258C6535005AB58B /* Modules */,
 				3E03507A258C654E005AB58B /* Services */,
-				3EA398D3258C53B800ABE87C /* Main.storyboard */,
-				3EA398D1258C53B800ABE87C /* ViewController.swift */,
+				3EE38800259194F6003035AF /* Model */,
+				3EE387FE259187E6003035AF /* Utils */,
 				3EA398D6258C53BA00ABE87C /* Assets.xcassets */,
 				3EA398DB258C53BA00ABE87C /* Info.plist */,
 			);
 			path = "RickAndMorty Characters iOS";
+			sourceTree = "<group>";
+		};
+		3EE387FE259187E6003035AF /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		3EE38800259194F6003035AF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3EE388012591952A003035AF /* Character.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -162,7 +200,7 @@
 				3EA398DA258C53BA00ABE87C /* LaunchScreen.storyboard in Resources */,
 				3EA398D7258C53BA00ABE87C /* Assets.xcassets in Resources */,
 				3E7C1967258C62A800A715BE /* README.md in Resources */,
-				3EA398D5258C53B800ABE87C /* Main.storyboard in Resources */,
+				3E37058F258F12E1003144DB /* CharacterTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -173,8 +211,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3EA398D2258C53B800ABE87C /* ViewController.swift in Sources */,
 				3EA398CE258C53B800ABE87C /* AppDelegate.swift in Sources */,
+				3E37058E258F12E1003144DB /* CharacterTableViewCell.swift in Sources */,
+				3EE388022591952A003035AF /* Character.swift in Sources */,
+				3E370586258EFDD2003144DB /* CharacterListTableViewController.swift in Sources */,
 				3EA398D0258C53B800ABE87C /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -182,14 +222,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		3EA398D3258C53B800ABE87C /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				3EA398D4258C53B800ABE87C /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		3EA398D8258C53BA00ABE87C /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -322,7 +354,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = P39ZCVPYYR;
 				INFOPLIST_FILE = "RickAndMorty Characters iOS/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -331,6 +365,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.duilan.RickAndMorty-Characters-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -341,7 +376,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = P39ZCVPYYR;
 				INFOPLIST_FILE = "RickAndMorty Characters iOS/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -350,6 +387,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.duilan.RickAndMorty-Characters-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
