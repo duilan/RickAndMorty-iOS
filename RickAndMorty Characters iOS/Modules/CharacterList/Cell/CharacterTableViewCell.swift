@@ -43,8 +43,10 @@ final class CharacterTableViewCell: UITableViewCell {
         statusColor.textColor = { () -> UIColor in
             if character.status == "Alive" {
                 return UIColor.green
-            } else {
+            } else if character.status == "Dead"{
                 return UIColor.red
+            } else {
+                return UIColor.gray
             }
         }()
         imagen.image = UIImage(named: "exampleCell")

@@ -51,7 +51,7 @@
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alive" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c4Y-By-cHd" userLabel="statusText">
                                                 <rect key="frame" x="15" y="0.0" width="50" height="39.5"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="50" id="8JR-Nm-2Ej"/>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="8JR-Nm-2Ej"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="16"/>
                                                 <nil key="textColor"/>
