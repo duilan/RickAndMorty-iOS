@@ -17,8 +17,7 @@ final class CharacterListTableVC: UITableViewController {
         super.viewDidLoad()
         setupNavigation()
         setupTable()
-        // datos de prueba
-        dataPrueba()
+        loadRemoteData()
     }
     
     // MARK: - METHODS
@@ -35,24 +34,13 @@ final class CharacterListTableVC: UITableViewController {
         navigationItem.title = navTitle
     }
     
-    func dataPrueba() {
-        // datos de prueba
-        characters = [
-            Character(name: "Morty Smith", status: "Dead", specie: "Human", image: "exampleCell"),
-            Character(name: "Summer Smith", status: "Alive", specie: "Human", image: "exampleCell2"),
-            Character(name: "Regular Tyrion Lannister", status: "Alive", specie: "Human", image: "exampleCell"),
-            Character(name: "Summer Smith", status: "Alive", specie: "Human", image: "exampleCell2"),
-            Character(name: "Regular Tyrion Lannister", status: "Dead", specie: "Human", image: "exampleCell"),
-            Character(name: "Summer Smith", status: "Dead", specie: "Human", image: "exampleCell2"),
-            Character(name: "Regular Tyrion Lannister", status: "Dead", specie: "Human", image: "exampleCell"),
-            Character(name: "Summer Smith", status: "Dead", specie: "Human", image: "exampleCell2"),
-            Character(name: "Regular Tyrion Lannister", status: "Alive", specie: "Human", image: "exampleCell"),
-            Character(name: "Summer Smith", status: "Dead", specie: "Human", image: "exampleCell2"),
-            Character(name: "Regular Tyrion Lannister", status: "Alive", specie: "Human", image: "exampleCell"),
-            Character(name: "Summer Smith", status: "Alive", specie: "Human", image: "exampleCell2"),
-            Character(name: "Regular Tyrion Lannister", status: "Alive", specie: "Human", image: "exampleCell"),
-            Character(name: "Pink Polo Shirt Jerry", status: "Alive", specie: "Alien", image: "exampleCell2"),
-            Character(name: "Programmer", status: "Dead", specie: "Developer", image: "exampleCell")]
+    func loadRemoteData() {
+        ApiDataManager.shared.fetchCharacters(numPage: 1) { personajes in
+            self.characters = personajes.results
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
     }
     
 }

@@ -36,7 +36,7 @@ final class CharacterTableViewCell: UITableViewCell {
     
     func setName(_ character: Character) {
         label.text = character.name
-        specie.text = character.specie
+        specie.text = character.species
         statusText.text = character.status
         
         // mover logica al model
@@ -47,7 +47,7 @@ final class CharacterTableViewCell: UITableViewCell {
                 return UIColor.red
             }
         }()
-        imagen.image = UIImage(named: character.image)
+        imagen.image = UIImage(named: "exampleCell")
     }
     
     // MARK: - PRIVATE METHODS

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3E309CAF2594283200E47862 /* ApiDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E309CAE2594283200E47862 /* ApiDataManager.swift */; };
 		3E370586258EFDD2003144DB /* CharacterListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E370585258EFDD2003144DB /* CharacterListTableViewController.swift */; };
 		3E37058E258F12E1003144DB /* CharacterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E37058C258F12E1003144DB /* CharacterTableViewCell.swift */; };
 		3E37058F258F12E1003144DB /* CharacterTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3E37058D258F12E1003144DB /* CharacterTableViewCell.xib */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3E309CAE2594283200E47862 /* ApiDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiDataManager.swift; sourceTree = "<group>"; };
 		3E370585258EFDD2003144DB /* CharacterListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListTableViewController.swift; sourceTree = "<group>"; };
 		3E37058C258F12E1003144DB /* CharacterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterTableViewCell.swift; sourceTree = "<group>"; };
 		3E37058D258F12E1003144DB /* CharacterTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CharacterTableViewCell.xib; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 		3E03507A258C654E005AB58B /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				3E7252EA259565BC00CD7B7E /* Remote */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -92,6 +95,14 @@
 				3E37058D258F12E1003144DB /* CharacterTableViewCell.xib */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		3E7252EA259565BC00CD7B7E /* Remote */ = {
+			isa = PBXGroup;
+			children = (
+				3E309CAE2594283200E47862 /* ApiDataManager.swift */,
+			);
+			path = Remote;
 			sourceTree = "<group>";
 		};
 		3EA398C1258C53B800ABE87C = {
@@ -214,6 +225,7 @@
 				3EA398CE258C53B800ABE87C /* AppDelegate.swift in Sources */,
 				3E37058E258F12E1003144DB /* CharacterTableViewCell.swift in Sources */,
 				3EE388022591952A003035AF /* Character.swift in Sources */,
+				3E309CAF2594283200E47862 /* ApiDataManager.swift in Sources */,
 				3E370586258EFDD2003144DB /* CharacterListTableViewController.swift in Sources */,
 				3EA398D0258C53B800ABE87C /* SceneDelegate.swift in Sources */,
 			);
