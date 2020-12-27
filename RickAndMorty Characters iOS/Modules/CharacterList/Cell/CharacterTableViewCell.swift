@@ -49,7 +49,7 @@ final class CharacterTableViewCell: UITableViewCell {
                 return UIColor.gray
             }
         }()
-        imagen.image = UIImage(named: "exampleCell")
+        imagen.loadImageURL(from: character.image)
     }
     
     // MARK: - PRIVATE METHODS
