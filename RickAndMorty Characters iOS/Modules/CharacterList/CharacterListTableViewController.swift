@@ -63,5 +63,11 @@ extension CharacterListTableVC {
         }
         return UITableViewCell()
     }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vc = CharacterDetailVC()
+        vc.character = characters[indexPath.row]
+        navigationController?.pushViewController( vc, animated: true)
+    }
 }
 

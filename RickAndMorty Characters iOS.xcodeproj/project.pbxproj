@@ -13,6 +13,8 @@
 		3E37058E258F12E1003144DB /* CharacterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E37058C258F12E1003144DB /* CharacterTableViewCell.swift */; };
 		3E37058F258F12E1003144DB /* CharacterTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3E37058D258F12E1003144DB /* CharacterTableViewCell.xib */; };
 		3E7C1967258C62A800A715BE /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 3E7C1966258C62A800A715BE /* README.md */; };
+		3E7C742D2599A61300B76620 /* CharacterDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E7C742B2599A61300B76620 /* CharacterDetailVC.swift */; };
+		3E7C742E2599A61300B76620 /* CharacterDetailVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3E7C742C2599A61300B76620 /* CharacterDetailVC.xib */; };
 		3EA398CE258C53B800ABE87C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA398CD258C53B800ABE87C /* AppDelegate.swift */; };
 		3EA398D0258C53B800ABE87C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA398CF258C53B800ABE87C /* SceneDelegate.swift */; };
 		3EA398D7258C53BA00ABE87C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3EA398D6258C53BA00ABE87C /* Assets.xcassets */; };
@@ -28,6 +30,8 @@
 		3E37058C258F12E1003144DB /* CharacterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterTableViewCell.swift; sourceTree = "<group>"; };
 		3E37058D258F12E1003144DB /* CharacterTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CharacterTableViewCell.xib; sourceTree = "<group>"; };
 		3E7C1966258C62A800A715BE /* README.md */ = {isa = PBXFileReference; explicitFileType = net.daringfireball.markdown; fileEncoding = 4; path = README.md; sourceTree = "<group>"; };
+		3E7C742B2599A61300B76620 /* CharacterDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailVC.swift; sourceTree = "<group>"; };
+		3E7C742C2599A61300B76620 /* CharacterDetailVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CharacterDetailVC.xib; sourceTree = "<group>"; };
 		3EA398CA258C53B800ABE87C /* RickAndMorty Characters iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "RickAndMorty Characters iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3EA398CD258C53B800ABE87C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3EA398CF258C53B800ABE87C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -54,6 +58,7 @@
 			children = (
 				3E035079258C653F005AB58B /* Launch */,
 				3E37057E258EFC3E003144DB /* CharacterList */,
+				3E51B0CB2599A3FE005A90D1 /* CharacterDetail */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -99,6 +104,15 @@
 				3E37058D258F12E1003144DB /* CharacterTableViewCell.xib */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		3E51B0CB2599A3FE005A90D1 /* CharacterDetail */ = {
+			isa = PBXGroup;
+			children = (
+				3E7C742B2599A61300B76620 /* CharacterDetailVC.swift */,
+				3E7C742C2599A61300B76620 /* CharacterDetailVC.xib */,
+			);
+			path = CharacterDetail;
 			sourceTree = "<group>";
 		};
 		3E7252EA259565BC00CD7B7E /* Remote */ = {
@@ -219,6 +233,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3E7C742E2599A61300B76620 /* CharacterDetailVC.xib in Resources */,
 				3EA398DA258C53BA00ABE87C /* LaunchScreen.storyboard in Resources */,
 				3EA398D7258C53BA00ABE87C /* Assets.xcassets in Resources */,
 				3E7C1967258C62A800A715BE /* README.md in Resources */,
@@ -236,6 +251,7 @@
 				3E0A699E2599347B00289E41 /* UIImage+Ext.swift in Sources */,
 				3EA398CE258C53B800ABE87C /* AppDelegate.swift in Sources */,
 				3E37058E258F12E1003144DB /* CharacterTableViewCell.swift in Sources */,
+				3E7C742D2599A61300B76620 /* CharacterDetailVC.swift in Sources */,
 				3EE388022591952A003035AF /* Character.swift in Sources */,
 				3E309CAF2594283200E47862 /* ApiDataManager.swift in Sources */,
 				3E370586258EFDD2003144DB /* CharacterListTableViewController.swift in Sources */,
