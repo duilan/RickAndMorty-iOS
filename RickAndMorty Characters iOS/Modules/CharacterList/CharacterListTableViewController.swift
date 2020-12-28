@@ -32,6 +32,7 @@ final class CharacterListTableVC: UITableViewController {
     
     func setupNavigation() {
         navigationItem.title = navTitle
+        navigationController?.navigationBar.prefersLargeTitles = true
     }
     
     func loadRemoteData() {
