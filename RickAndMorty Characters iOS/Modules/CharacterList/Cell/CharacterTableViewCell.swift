@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 final class CharacterTableViewCell: UITableViewCell {
     
@@ -49,7 +50,11 @@ final class CharacterTableViewCell: UITableViewCell {
                 return UIColor.gray
             }
         }()
-        imagen.loadImageURL(from: character.image)
+        
+        //imagen.loadImageURL(from: character.image)
+        let url = URL(string: character.image)
+        imagen.kf.indicatorType = .activity
+        imagen.kf.setImage(with: url, options: [.transition(.fade(0.2))])
     }
     
     // MARK: - PRIVATE METHODS
