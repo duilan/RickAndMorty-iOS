@@ -9,31 +9,31 @@ import UIKit
 import Kingfisher
 
 class CharacterDetailVC: UIViewController {
-
+    
     var character: Character?
+    private let cornerRadius: CGFloat = 16
+    
     @IBOutlet weak var image: UIImageView!
-            
+    @IBOutlet weak var name: UILabel!
+    @IBOutlet weak var specie: UILabel!
+    @IBOutlet weak var status: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupUI()
         setData()
-        // Do any additional setup after loading the view.
     }
-
+    
+    func setupUI() {
+        image.layer.cornerRadius = cornerRadius
+    }
+    
     func setData() {
-        if let imageUrlString =  character?.image{
-            let url = URL(string: imageUrlString)
-            image.kf.setImage(with: url)
-        }
+        guard let characterDetail = character else { return }
+        
+        image.kf.setImage(with: URL(string: characterDetail.image))
+        name.text = characterDetail.name
+        specie.text = characterDetail.species
+        status.text = characterDetail.status
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
