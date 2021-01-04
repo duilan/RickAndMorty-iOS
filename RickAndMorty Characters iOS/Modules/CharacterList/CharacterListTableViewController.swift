@@ -12,6 +12,8 @@ final class CharacterListTableVC: UITableViewController {
     private let rowHeight: CGFloat = 150
     private let navTitle = "Rick & Morty"
     private var characters = [Character]()
+    private var currentPage = 1
+    private var totalPages = 34 // default but will change with API request
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,8 +38,9 @@ final class CharacterListTableVC: UITableViewController {
     }
     
     func loadRemoteData() {
-        ApiDataManager.shared.fetchCharacters(numPage: 1) { personajes in
-            self.characters = personajes.results
+        ApiDataManager.shared.fetchCharacters(numPage: currentPage) { personajes in
+            self.characters.append(contentsOf: personajes.results)
+            self.totalPages = personajes.info.pages
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
@@ -56,6 +59,13 @@ extension CharacterListTableVC {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         if let cell = tableView.dequeueReusableCell(withIdentifier: CharacterTableViewCell.kCellId, for: indexPath) as? CharacterTableViewCell {
+            
+            // Check if the last row number is the same as the last current data element
+            // and check limit totalPages
+            if indexPath.row == self.characters.count - 1 && currentPage < totalPages{
+                currentPage += 1
+                loadRemoteData()
+            }
             
             let character = characters[indexPath.row]
             cell.setName(character)
