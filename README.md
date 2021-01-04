@@ -1,7 +1,7 @@
 # RickAndMorty-iOS
 Simple app to display Rick and Morty characters and detail
 
-<img align="center" src="https://github.com/duilan/RickAndMorty-iOS/blob/main/Screenshots/RickAndMorty%20Characters%20iOS-App.jpeg?raw=true" alt="Schedule screenshot" height="500">
+<img align="center" src="https://raw.githubusercontent.com/duilan/RickAndMorty-iOS/main/Screenshots/RickAndMorty-Characters-iOS-App.gif" alt="Preview app" height="500">
 
 # API
 http://rickandmortyapi.com/
