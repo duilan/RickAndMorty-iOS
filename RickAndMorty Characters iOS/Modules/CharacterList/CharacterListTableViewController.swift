@@ -37,11 +37,22 @@ final class CharacterListTableVC: UITableViewController {
         navigationController?.navigationBar.prefersLargeTitles = true
     }
     
+    func createSpinnerFooter() -> UIView {
+        let footer = UIView(frame: CGRect(x: .zero, y: .zero, width: view.frame.size.width , height: 100))
+        let spinner = UIActivityIndicatorView()
+        spinner.center = footer.center
+        footer.addSubview(spinner)
+        spinner.startAnimating()
+        return footer
+    }
+    
     func loadRemoteData() {
+        tableView.tableFooterView = createSpinnerFooter()
         ApiDataManager.shared.fetchCharacters(numPage: currentPage) { personajes in
             self.characters.append(contentsOf: personajes.results)
             self.totalPages = personajes.info.pages
-            DispatchQueue.main.async {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                self.tableView.tableFooterView = nil
                 self.tableView.reloadData()
             }
         }
