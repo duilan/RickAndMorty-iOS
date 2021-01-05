@@ -23,16 +23,18 @@ struct Character: Codable {
     let status: String
     let species: String
     let image: String
-    
-    init(id: Int, name: String, status: String, species: String, image: String) {
-        self.id = id
-        self.name = name
-        self.status = status
-        self.species = species
-        self.image = image
-    }
+    let gender: String
+    let origin: Origin
+    let location: Location
 }
 
+struct Origin: Codable {
+    let name: String    
+}
+
+struct Location: Codable {
+    let name: String
+}
 
 /*
  Example
