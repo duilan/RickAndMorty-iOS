@@ -12,6 +12,7 @@ class CharacterDetailVC: UIViewController {
     
     var character: Character?
     private let cornerRadius: CGFloat = 16
+    private let navTitle = "Detail"
     
     @IBOutlet weak var image: UIImageView!
     @IBOutlet weak var name: UILabel!
@@ -20,12 +21,18 @@ class CharacterDetailVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupNavigation()
         setupUI()
         setData()
     }
     
     func setupUI() {
         image.layer.cornerRadius = cornerRadius
+    }
+    
+    func setupNavigation() {
+        navigationItem.title = navTitle
+        navigationItem.largeTitleDisplayMode = .never
     }
     
     func setData() {

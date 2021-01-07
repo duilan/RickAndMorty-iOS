@@ -24,13 +24,13 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5TZ-8Y-WwZ">
-                    <rect key="frame" x="20" y="70" width="335" height="335"/>
+                    <rect key="frame" x="20" y="30" width="335" height="335"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="5TZ-8Y-WwZ" secondAttribute="height" multiplier="1:1" id="2J0-sF-Yrw"/>
                     </constraints>
                 </imageView>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="mFg-XP-ATH">
-                    <rect key="frame" x="20" y="425" width="335" height="112"/>
+                    <rect key="frame" x="20" y="385" width="335" height="112"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Character Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s36-gl-dhn">
                             <rect key="frame" x="0.0" y="0.0" width="335" height="34"/>
@@ -61,7 +61,7 @@
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="mFg-XP-ATH" secondAttribute="trailing" constant="20" id="HBP-ZS-f0e"/>
                 <constraint firstItem="5TZ-8Y-WwZ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="ORe-Sn-fnr"/>
                 <constraint firstItem="mFg-XP-ATH" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="gdB-Nd-anh"/>
-                <constraint firstItem="5TZ-8Y-WwZ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="70" id="xRH-r5-BIS"/>
+                <constraint firstItem="5TZ-8Y-WwZ" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="30" id="xRH-r5-BIS"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="5TZ-8Y-WwZ" secondAttribute="trailing" constant="20" id="yXE-dv-L4A"/>
             </constraints>
             <point key="canvasLocation" x="-295.19999999999999" y="130.88455772113943"/>
