@@ -12,21 +12,13 @@ final class CharacterTableViewCell: UITableViewCell {
     
     static let kCellId = "CharacterTableViewCell"
     
-    private let cornerRadius: CGFloat = 16
-    private let shadowRadius: CGFloat = 8.0
-    private let shadowOpacity: Float = 0.2
-    private let shadowOffset: CGSize = .zero
-    private let shadowColor: UIColor = UIColor.black
-    private let scaleTransformCard: CGFloat = 0.97
-    private let durationTransformCard = 0.2
-    
     // MARK: - OUTLETS
     @IBOutlet weak var card: UIView!
-    @IBOutlet weak var label: UILabel!
+    @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var imagen: UIImageView!
-    @IBOutlet weak var specie: UILabel!
+    @IBOutlet weak var specieLabel: UILabel!
     @IBOutlet weak var statusColor: UILabel!
-    @IBOutlet weak var statusText: UILabel!
+    @IBOutlet weak var statusLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -36,9 +28,9 @@ final class CharacterTableViewCell: UITableViewCell {
     // MARK: - METHODS
     
     func setName(_ character: Character) {
-        label.text = character.name
-        specie.text = character.species
-        statusText.text = character.status
+        nameLabel.text = character.name
+        specieLabel.text = character.species
+        statusLabel.text = character.status
         
         // mover logica al model
         statusColor.textColor = { () -> UIColor in
@@ -60,19 +52,15 @@ final class CharacterTableViewCell: UITableViewCell {
     // MARK: - PRIVATE METHODS
     
     private func setupUI() {
-        // color de fondo
+        
         backgroundColor = .clear
+        // sombra al contenido de la celda
+        layer.shadowColor = UIColor.black.cgColor
+        layer.shadowOffset = .zero
+        layer.shadowOpacity = 0.2
+        layer.shadowRadius = 8.0
         // pone borde redondo a card que contiene img y datos
-        card.layer.cornerRadius = cornerRadius
-        // sombra al contenido de la celda
-        setShadow()
-    }
-    
-    private func setShadow() {
-        // sombra al contenido de la celda
-        self.layer.shadowColor = shadowColor.cgColor
-        self.layer.shadowOffset = shadowOffset
-        self.layer.shadowOpacity = shadowOpacity
-        self.layer.shadowRadius = shadowRadius
+        card.layer.cornerRadius = 16
+        card.backgroundColor = .secondarySystemGroupedBackground
     }
 }

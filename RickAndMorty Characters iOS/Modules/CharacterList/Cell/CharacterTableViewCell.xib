@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -91,10 +89,10 @@
             <connections>
                 <outlet property="card" destination="kQI-Ak-UJL" id="5vs-s4-enZ"/>
                 <outlet property="imagen" destination="gI6-8q-6lU" id="f7f-Z5-uvJ"/>
-                <outlet property="label" destination="1Rn-qd-lse" id="bN2-d5-X1g"/>
-                <outlet property="specie" destination="uwa-z6-feY" id="UXO-eX-K2a"/>
+                <outlet property="nameLabel" destination="1Rn-qd-lse" id="bN2-d5-X1g"/>
+                <outlet property="specieLabel" destination="uwa-z6-feY" id="UXO-eX-K2a"/>
                 <outlet property="statusColor" destination="MNf-qI-Kjf" id="t85-Vp-qjk"/>
-                <outlet property="statusText" destination="c4Y-By-cHd" id="0sn-xE-hoa"/>
+                <outlet property="statusLabel" destination="c4Y-By-cHd" id="0sn-xE-hoa"/>
             </connections>
             <point key="canvasLocation" x="226.81159420289856" y="58.928571428571423"/>
         </tableViewCell>
