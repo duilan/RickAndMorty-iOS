@@ -6,37 +6,53 @@
 //
 import UIKit
 
+enum APIError: String, Error {
+    case invalidRequest = "Unable to complete your request. Please check your internet connection"
+    case invalidURL = "The URL is invalid. Please try again."
+    case invalidResponse  = "Invalid response from the server. Please try again."
+    case invalidData = "The data received from the server is invalid. Please try again."
+}
+
 class ApiDataManager {
     // Singleton
     static let shared = ApiDataManager()
     
+    private init() {}
+    
     let baseURL = "https://rickandmortyapi.com/api"
     
     // Obtiene los caracteres por paginacion
-    func fetchCharacters(numPage: Int, completed: @escaping (Characters) -> Void) {
-        // conforma url de characters por pagina
-        let url = URL(string: "\(baseURL)/character?page=\(numPage)")!
-        // realiza peticion http
+    func fetchCharacters(numPage: Int, completed: @escaping (Result<Characters,APIError>) -> Void) {
+        let endpoint = baseURL + "/character?page=\(numPage)"
         
+        guard let url = URL(string: endpoint) else {
+            completed(.failure(.invalidURL))
+            return
+        }
+                        
         let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
-            // verificamos error
-            if let e = error {
-                print("Error with fetching: \(e)")
-                return
-            }
-            // verificamos data
-            guard let safeData = data else {
-                print("Error with fetching data")
+            
+            if let _ = error {
+                completed(.failure(.invalidRequest))
                 return
             }
             
-            // se hace decode de datos JSON
+            guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
+                completed(.failure(.invalidResponse))
+                return
+            }
+                        
+            guard let safeData = data else {
+                completed(.failure(.invalidData))
+                return
+            }
+                        
             do {
                 let decoder = JSONDecoder()
                 let decodeData = try decoder.decode(Characters.self, from: safeData)
-                return completed(decodeData)
+                return completed(.success(decodeData))
             } catch {
-                print("Error parsing JSON \(error)")
+                completed(.failure(.invalidData))
             }
         }
         task.resume()

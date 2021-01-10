@@ -48,12 +48,19 @@ final class CharacterListTableVC: UITableViewController {
     
     func loadRemoteData() {
         tableView.tableFooterView = createSpinnerFooter()
-        ApiDataManager.shared.fetchCharacters(numPage: currentPage) { personajes in
-            self.characters.append(contentsOf: personajes.results)
-            self.totalPages = personajes.info.pages
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                self.tableView.tableFooterView = nil
-                self.tableView.reloadData()
+        
+        ApiDataManager.shared.fetchCharacters(numPage: currentPage) { result in
+            switch result {
+            case .success( let personajes):
+                self.characters.append(contentsOf: personajes.results)
+                self.totalPages = personajes.info.pages
+                
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                    self.tableView.tableFooterView = nil
+                    self.tableView.reloadData()
+                }
+            case .failure( let error):
+                print(error.rawValue)
             }
         }
     }
