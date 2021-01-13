@@ -22,12 +22,12 @@ final class CharacterTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        setupUI()
+        configureViewCell()
     }
     
     // MARK: - METHODS
     
-    func setName(_ character: Character) {
+    func set(_ character: Character) {
         nameLabel.text = character.name
         specieLabel.text = character.species
         statusLabel.text = character.status
@@ -51,8 +51,7 @@ final class CharacterTableViewCell: UITableViewCell {
     
     // MARK: - PRIVATE METHODS
     
-    private func setupUI() {
-        
+    private func configureViewCell() {        
         backgroundColor = .clear
         // sombra al contenido de la celda
         layer.shadowColor = UIColor.black.cgColor

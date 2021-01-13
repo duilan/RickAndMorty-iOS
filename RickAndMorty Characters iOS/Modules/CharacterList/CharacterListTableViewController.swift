@@ -7,56 +7,54 @@
 
 import UIKit
 
-final class CharacterListTableVC: UITableViewController {
+final class CharacterListTableVC: UIViewController {
     
-    private let rowHeight: CGFloat = 150
     private let navTitle = "Rick & Morty"
     private var characters = [Character]()
     private var currentPage = 1
     private var totalPages = 34 // default but will change with API request
     
+    private let tableView = UITableView()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupNavigation()
-        setupTable()
-        loadRemoteData()
+        configureViewController()
+        configureTable()
+        getCharacters()
     }
     
     // MARK: - METHODS
-    func setupTable() {
-        
-        tableView.separatorStyle = .none
-        tableView.rowHeight = rowHeight
-        tableView.contentInset = UIEdgeInsets(top: 16, left: 0, bottom: 16, right: 0)
-        
-        tableView.register(UINib(nibName: CharacterTableViewCell.kCellId , bundle: nil   ), forCellReuseIdentifier: CharacterTableViewCell.kCellId)
-    }
     
-    func setupNavigation() {
+    private func configureViewController() {
         navigationItem.title = navTitle
         navigationController?.navigationBar.prefersLargeTitles = true
     }
     
-    func createSpinnerFooter() -> UIView {
-        let footer = UIView(frame: CGRect(x: .zero, y: .zero, width: view.frame.size.width , height: 100))
-        let spinner = UIActivityIndicatorView()
-        spinner.center = footer.center
-        footer.addSubview(spinner)
-        spinner.startAnimating()
-        return footer
+    private func configureTable() {
+        view.addSubview(tableView)
+        tableView.frame = view.bounds
+        tableView.separatorStyle = .none
+        tableView.rowHeight = 150
+        tableView.contentInset = UIEdgeInsets(top: 16, left: 0, bottom: 16, right: 0)
+        
+        tableView.delegate = self
+        tableView.dataSource = self
+        
+        tableView.register(UINib(nibName: CharacterTableViewCell.kCellId , bundle: nil), forCellReuseIdentifier: CharacterTableViewCell.kCellId)
     }
     
-    func loadRemoteData() {
-        tableView.tableFooterView = createSpinnerFooter()
-        
-        ApiDataManager.shared.fetchCharacters(numPage: currentPage) { result in
+    private func getCharacters() {
+        tableView.showSpinnerFooter()
+        ApiDataManager.shared.fetchCharacters(numPage: currentPage) { [weak self] result in
+            guard let self = self else { return }
+            
             switch result {
             case .success( let personajes):
                 self.characters.append(contentsOf: personajes.results)
                 self.totalPages = personajes.info.pages
                 
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                    self.tableView.tableFooterView = nil
+                    self.tableView.hiddenSpinnerFooter()
                     self.tableView.reloadData()
                 }
             case .failure( let error):
@@ -68,13 +66,14 @@ final class CharacterListTableVC: UITableViewController {
 }
 
 // MARK: - TABLE DATASOURCE AND DELEGATE
-extension CharacterListTableVC {
+
+extension CharacterListTableVC : UITableViewDelegate, UITableViewDataSource{
     
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return characters.count
     }
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         if let cell = tableView.dequeueReusableCell(withIdentifier: CharacterTableViewCell.kCellId, for: indexPath) as? CharacterTableViewCell {
             
@@ -82,20 +81,19 @@ extension CharacterListTableVC {
             // and check limit totalPages
             if indexPath.row == self.characters.count - 1 && currentPage < totalPages{
                 currentPage += 1
-                loadRemoteData()
+                getCharacters()
             }
             
             let character = characters[indexPath.row]
-            cell.setName(character)
+            cell.set(character)
             return cell
         }
         return UITableViewCell()
     }
     
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vc = CharacterDetailVC()
         vc.character = characters[indexPath.row]
         navigationController?.pushViewController( vc, animated: true)
     }
 }
-

@@ -19,7 +19,7 @@ class ApiDataManager {
     
     private init() {}
     
-    let baseURL = "https://rickandmortyapi.com/api"
+    private let baseURL = "https://rickandmortyapi.com/api"
     
     // Obtiene los caracteres por paginacion
     func fetchCharacters(numPage: Int, completed: @escaping (Result<Characters,APIError>) -> Void) {
