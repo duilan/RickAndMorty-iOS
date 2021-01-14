@@ -77,9 +77,9 @@ extension CharacterListTableVC : UITableViewDelegate, UITableViewDataSource{
         
         if let cell = tableView.dequeueReusableCell(withIdentifier: CharacterTableViewCell.kCellId, for: indexPath) as? CharacterTableViewCell {
             
-            // Check if the last row number is the same as the last current data element
-            // and check limit totalPages
-            if indexPath.row == self.characters.count - 1 && currentPage < totalPages{
+            // load new data by page
+            let lastRow = self.characters.count - 1
+            if indexPath.row == lastRow && currentPage < totalPages {
                 currentPage += 1
                 getCharacters()
             }
