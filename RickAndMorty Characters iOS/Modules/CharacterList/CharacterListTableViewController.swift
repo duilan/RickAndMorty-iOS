@@ -45,7 +45,7 @@ final class CharacterListTableVC: UIViewController {
     
     private func getCharacters() {
         tableView.showSpinnerFooter()
-        ApiDataManager.shared.fetchCharacters(numPage: currentPage) { [weak self] result in
+        APIDataManager.shared.fetchCharacters(numPage: currentPage) { [weak self] result in
             guard let self = self else { return }
             
             switch result {

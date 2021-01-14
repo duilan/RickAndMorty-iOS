@@ -6,16 +6,9 @@
 //
 import UIKit
 
-enum APIError: String, Error {
-    case invalidRequest = "Unable to complete your request. Please check your internet connection"
-    case invalidURL = "The URL is invalid. Please try again."
-    case invalidResponse  = "Invalid response from the server. Please try again."
-    case invalidData = "The data received from the server is invalid. Please try again."
-}
-
-class ApiDataManager {
+class APIDataManager {
     // Singleton
-    static let shared = ApiDataManager()
+    static let shared = APIDataManager()
     
     private init() {}
     
@@ -29,7 +22,7 @@ class ApiDataManager {
             completed(.failure(.invalidURL))
             return
         }
-                        
+        
         let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
             
             if let _ = error {
@@ -41,12 +34,12 @@ class ApiDataManager {
                 completed(.failure(.invalidResponse))
                 return
             }
-                        
+            
             guard let safeData = data else {
                 completed(.failure(.invalidData))
                 return
             }
-                        
+            
             do {
                 let decoder = JSONDecoder()
                 let decodeData = try decoder.decode(Characters.self, from: safeData)
